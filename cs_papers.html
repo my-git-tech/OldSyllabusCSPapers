@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB Computer Science Past Papers</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f4f8; color: #1a202c; }
+  header { background: linear-gradient(135deg, #1a365d, #2b6cb0); color: white; padding: 2rem; text-align: center; }
+  header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  header p { opacity: 0.85; font-size: 1rem; }
+  .stats { display: flex; justify-content: center; gap: 2rem; padding: 1.5rem; background: white; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat .num { font-size: 2rem; font-weight: 700; color: #2b6cb0; }
+  .stat .label { font-size: 0.8rem; color: #718096; text-transform: uppercase; letter-spacing: 0.05em; }
+  .search-bar { padding: 1rem 2rem; background: white; border-bottom: 1px solid #e2e8f0; }
+  .search-bar input { width: 100%; max-width: 500px; display: block; margin: 0 auto; padding: 0.6rem 1rem; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 1rem; }
+  .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  .year-block { background: white; border-radius: 12px; margin-bottom: 1.5rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .year-header { background: #2b6cb0; color: white; padding: 0.8rem 1.2rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
+  .year-header h2 { font-size: 1.1rem; }
+  .year-header .count { background: rgba(255,255,255,0.25); border-radius: 20px; padding: 0.2rem 0.7rem; font-size: 0.85rem; }
+  .year-header .arrow { transition: transform 0.2s; }
+  .year-content { display: none; padding: 1rem; }
+  .year-content.open { display: block; }
+  .session-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #718096; font-weight: 600; margin: 0.8rem 0 0.4rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.3rem; }
+  .paper-list { list-style: none; }
+  .paper-list li { padding: 0.35rem 0; border-bottom: 1px solid #f7fafc; }
+  .paper-list li:last-child { border-bottom: none; }
+  .paper-list a { color: #2b6cb0; text-decoration: none; font-size: 0.92rem; display: flex; align-items: center; gap: 0.4rem; }
+  .paper-list a:hover { color: #1a365d; text-decoration: underline; }
+  .tag { font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600; }
+  .tag-hl { background: #fed7d7; color: #c53030; }
+  .tag-sl { background: #bee3f8; color: #2c5282; }
+  .tag-ms { background: #c6f6d5; color: #276749; }
+  .tag-p3 { background: #fefcbf; color: #744210; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 IB Computer Science Past Papers</h1>
+  <p>Complete collection 2010–2025 · All levels & sessions</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="num">426</div><div class="label">Total Papers</div></div>
+  <div class="stat"><div class="num">16</div><div class="label">Years</div></div>
+  <div class="stat"><div class="num">2010–2025</div><div class="label">Coverage</div></div>
+</div>
+<div class="search-bar">
+  <input type="text" id="search" placeholder="🔍 Filter papers by name, year, level..." oninput="filterPapers()">
+</div>
+<div class="container" id="main">
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2025 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">4 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content open">
+      <div class="session-title">Donated/Other Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2025%20Examination%20Session/DONATED%20PAPERS%20M25/Computer_Science_HL_P1_TZ2.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_Science_HL_P1_TZ2.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2025%20Examination%20Session/DONATED%20PAPERS%20M25/Computer_Science_P3_TZ2.pdf" target="_blank"><span class="tag tag-p3">P3</span> Computer_Science_P3_TZ2.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2025%20Examination%20Session/DONATED%20PAPERS%20M25/Computer_Science_SL_P1_TZ2.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_Science_SL_P1_TZ2.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2025%20Examination%20Session/DONATED%20PAPERS%20M25/Computer_Science_SL_P2_TZ2.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_Science_SL_P2_TZ2.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2024 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">30 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content open">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__TZ1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__TZ1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__TZ2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__TZ2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_1__TZ2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__TZ1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__TZ1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__TZ2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__TZ2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__case_study_HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/May%202024%20Examination%20Session/PDFs/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">Donated/Other Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2024%20Examination%20Session/DONATED%20PAPERS%20M24/Computer%20Science%20HL%20Paper%201.txt" target="_blank"><span class="tag tag-hl">HL</span> Computer Science HL Paper 1.txt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2023 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">46 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content open">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__TZ1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__TZ1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__TZ2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__TZ2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__TZ2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__TZ2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__TZ1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__TZ1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__TZ2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__TZ2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__TZ2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/May%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2023%20Examination%20Session/November%202023%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2022 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">25 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/May%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/November%202022%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+      </ul>
+      <div class="session-title">Donated/Other Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/DONATED%20PAPERS%20N22/Group%204%20-%20Sciences/Computer%20Science/Nov%202022%20CS%20HL%20Paper%201.pdf" target="_blank"><span class="tag tag-hl">HL</span> Nov 2022 CS HL Paper 1.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2022%20Examination%20Session/DONATED%20PAPERS%20N22/Group%204%20-%20Sciences/Computer%20Science/Nov%202022%20CS%20HL%20Paper%203.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Nov 2022 CS HL Paper 3.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2021 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">26 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/May%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2021%20Examination%20Session/November%202021%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2020 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">17 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2020%20Examination%20Session/November%202020%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2019 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">40 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/May%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2019%20Examination%20Session/November%202019%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2018 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">29 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/May%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2018%20Examination%20Session/November%202018%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2017 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">34 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/May%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2017%20Examination%20Session/November%202017%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2016 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">34 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/May%202016%20Examination%20Session/Group%204%20-%20Experimental%20Sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_1__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2__SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_2__SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2__SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2016%20Examination%20Session/November%202016%20Examination%20Session/Experimental%20sciences/Computer_science_paper_3__case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3__case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2015 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">23 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/May%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2015%20Examination%20Session/November%202015%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2014 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">28 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/May%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2014%20Examination%20Session/November%202014%20Examination%20Session/Group%204%20-%20Sciences/Computer_science_paper_3_case_study_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-p3">P3</span> Computer_science_paper_3_case_study_HL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2013 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">20 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/May%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2013%20Examination%20Session/November%202013%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2012 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">18 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/May%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2012%20Examination%20Session/November%202012%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2011 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">22 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/May%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2011%20Examination%20Session/November%202011%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggle(this)">
+      <h2>📅 2010 Examination Session</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="count">30 files</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+    <div class="year-content ">
+      <div class="session-title">May Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_French.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/May%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_Spanish.pdf</a></li>
+      </ul>
+      <div class="session-title">November Session</div>
+      <ul class="paper-list">
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_1_HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_1_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_1_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_1_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_HL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_HL_markscheme.pdf" target="_blank"><span class="tag tag-hl">HL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_HL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_Spanish.pdf" target="_blank"><span class="tag tag-sl">SL</span> Computer_science_paper_2_SL_Spanish.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_SL_markscheme.pdf" target="_blank"><span class="tag tag-sl">SL</span><span class="tag tag-ms">MS</span> Computer_science_paper_2_SL_markscheme.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_French.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_French.pdf</a></li>
+        <li><a href="https://arrib.qzz.io/IB%20PAST%20PAPERS%20-%20YEAR/2010%20Examination%20Session/November%202010%20Examination%20Session/Group%205%20-%20Mathematics/Computer_science_paper_2_case_study_HLSL_Spanish.pdf" target="_blank"><span class="tag tag-hl">HL</span> Computer_science_paper_2_case_study_HLSL_Spanish.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+function toggle(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.arrow');
+  content.classList.toggle('open');
+  arrow.textContent = content.classList.contains('open') ? '▲' : '▼';
+}
+function filterPapers() {
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.year-block').forEach(block => {
+    let anyVisible = false;
+    block.querySelectorAll('.paper-list li').forEach(li => {
+      const match = li.textContent.toLowerCase().includes(q);
+      li.classList.toggle('hidden', !match);
+      if (match) anyVisible = true;
+    });
+    block.classList.toggle('hidden', !anyVisible);
+    if (anyVisible && q) block.querySelector('.year-content').classList.add('open');
+  });
+}
+</script>
+</body>
+</html>
